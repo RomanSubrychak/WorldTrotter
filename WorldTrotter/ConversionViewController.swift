@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ConversionViewController: UIViewController {
 	
@@ -39,6 +40,10 @@ class ConversionViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateCelsusLabel()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+
 	}
 	
 	@IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
