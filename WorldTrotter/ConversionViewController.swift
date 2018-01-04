@@ -30,10 +30,12 @@ class ConversionViewController: UIViewController {
 	}
 	
 	let numberFormatter: NumberFormatter = {
+		
 		let numberFormatter = NumberFormatter()
 		numberFormatter.numberStyle = .decimal
 		numberFormatter.minimumFractionDigits = 0
 		numberFormatter.maximumFractionDigits = 1
+		
 		return numberFormatter
 	}()
 	
@@ -43,7 +45,16 @@ class ConversionViewController: UIViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-
+		
+		let currentDate = Date()
+		let calendar = Calendar.current
+		let hour = calendar.component(.hour, from: currentDate)
+		
+		if hour >= 20 {
+			view.backgroundColor = .lightGray
+		} else {
+			view.backgroundColor = UIColor(red: 245, green: 244, blue: 241, alpha: 1.0)
+		}
 	}
 	
 	@IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
